@@ -11,28 +11,29 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author chengxy
- * 2019/10/10
+ * 2019/10/22
  */
 public abstract class ID {
 
     private static AtomicLong gloalId = new AtomicLong(0);
 
-    //通过id字段标识消息类型以及应用
+    // 通过id字段标识配置及应用
     protected Long id;
 
-    public void setId(){
+    public void setId() {
         this.id = gloalId.addAndGet(1);
     }
 
-    public <T> boolean equals(Object obj,Class<T>cls){
-        if (obj == null || (cls.isInstance(obj))){
+    public <T> boolean equals(Object obj, Class<T> cls) {
+        if (obj == null || ! (cls.isInstance(obj))) {
             return false;
         }
         return ((ID)obj).id.equals(this.id);
     }
 
-    public int hasCode(){
+    public int hashCode() {
         return id.hashCode();
     }
+
 
 }

@@ -7,24 +7,28 @@
  */
 package com.example.observer.mode;
 
+import com.example.observer.transfer.Application;
+import com.example.observer.transfer.TransferObject;
+
 import java.util.function.Function;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 
 /**
  * @author chengxy
- * 2019/10/10
+ * 2019/10/22
  */
-@lombok.Data
+@Data
 @AllArgsConstructor
 public class DataListener {
 
     private Application app;
-    private Function<Data,Object> updateFunc;
+    private Function<TransferObject, Object> updateFunc;
 
     @Override
-    public boolean equals(Object c){
-        if (c == null || ! (c instanceof DataListener)){
+    public boolean equals(Object c) {
+        if (c == null || ! (c instanceof DataListener)) {
             return false;
         }
         DataListener cmp = (DataListener) c;

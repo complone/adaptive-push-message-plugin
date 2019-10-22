@@ -5,32 +5,29 @@
  * You shall not disclose such Confidential Information and shall use it only
  * in accordance with the terms of the license agreement you entered into with GuaHao.com.
  */
-package com.example.observer.mode.listener;
-
-import com.example.observer.mode.Application;
-import com.example.observer.mode.Data;
+package com.example.observer.transfer;
 
 /**
  * @author chengxy
- * 2019/10/10
+ * 2019/10/22
  */
-public class AApp extends Application {
+public class Receiver extends Application {
 
-    public AApp(){
-
+    public Receiver() {
+        super.setId();
     }
 
-    public Object haa(Data c) {
+    public Object haa(TransferObject c) {
         System.out.println("haa: " + c.getData());
         return c;
     }
 
-    public Object hab(Data c) {
+    public Object hab(TransferObject c) {
         System.out.println("hab: " + c.getData());
         return c;
     }
 
-    public Object hac(Data c) {
+    public Object hac(TransferObject c) {
         System.out.println("hac: " + c.getData());
         return c;
     }
